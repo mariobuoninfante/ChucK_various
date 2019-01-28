@@ -1,0 +1,27 @@
+PREREQUISITES
+---
+  - Pure Data >= 0.48.1 (http://msp.ucsd.edu/software.html)
+
+HOW TO USE
+---
+  - connect MIDI device to the computer
+  - launch SysExOSC.pd patch
+  - select MIDI device clicking on 'selecMidiDevice'
+  - launch ChucK script with SysExIn and/or SysExOut classes
+
+CHUCK classes
+---
+  - 'SysExIn' is used to receive SysEx messages
+    * this class needs to be initialized using the 'initialize(Event e)' method, that needs an event as argument
+    * the event passed to the object must be used to proceed in the 'main' loop (eventName => now)
+    * this class receives SysEx as 'strings' (Pure Data turns actual MIDI into strings)
+
+  - 'SysExOut' is used to send SysEx messages
+    * this class has only 1 method 'send(int msg[])', that needs an array of integers (SysEx message) as argument
+    * must be noted that 'SysExOut' doesn't check whether the SysEx message is malformed (ie doesn't end with '247') or not
+
+EXAMPLES
+---
+  - launch 'example_send.ck' to send random SysEx messages - it's possible to print messages on Pd
+  - launch 'example_recv.ck' to receive SysEx messages - it needs a device that actually sends SysEx
+  
