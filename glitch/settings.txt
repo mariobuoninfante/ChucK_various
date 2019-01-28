@@ -1,0 +1,26 @@
+#
+# don't change parameters name
+# 'comments' start with '#' plus 'SPACE'
+#
+
+# file to load - stereo files will be read as mono
+mainLoop = drum_69.wav
+glitch = lucy.wav
+
+# this should match the bpm of 'mainLoop'
+bpm = 69
+
+# when 1 'mainLoop' volume drops when glitches occur
+interrupter = 1
+
+# 0: no pitch shift; 1: octave pitch (-12,0,+12); 2: chromatic pitch (-12,12)
+pitchMode = 1
+
+# glitch randomness in a range 0-100
+randomness = 25
+
+# file length in 'bars'
+loops = 3
+
+# reverb mix in a range 0-100
+reverbMix = 35

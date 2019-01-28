@@ -1,0 +1,7 @@
+HOW TO INSTALL ChucK Programming Language
+---
+  - https://github.com/ccrma/chuck
+
+HOW TO INSTALL miniAudicle - ChucK IDE
+---
+  - http://chuck.cs.princeton.edu/release/
