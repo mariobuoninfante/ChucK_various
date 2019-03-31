@@ -1,5 +1,5 @@
 #N canvas 522 287 508 371 10;
-#N canvas 32 514 549 259 CORE 0;
+#N canvas 32 508 549 259 CORE 0;
 #N canvas 36 362 318 353 FROM_CHUCK 0;
 #X obj 25 17 loadbang;
 #X msg 25 58 listen 3000;
