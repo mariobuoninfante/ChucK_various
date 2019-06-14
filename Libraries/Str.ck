@@ -1,3 +1,9 @@
+/*
+    TODO
+    add Str.rep() for repetition
+    add Str.gsub() - global subsitution. Replace all occurences of a pattern in a string with another string
+*/
+
 public class Str
 {
     /*
@@ -66,6 +72,7 @@ public class Str
 
     function static string append( string s, string a )
     {
+        // for 'prepend' just swap args
         return s + a;
     }
 
