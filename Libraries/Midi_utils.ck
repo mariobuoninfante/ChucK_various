@@ -1,20 +1,20 @@
 public class Midi_utils
 {
-    0x80 => int NOTE_OFF;
-    0x90 => int NOTE_ON;
-    0xA0 => int POLY_PRESS;
-    0xB0 => int CTRL_CHANGE;
-    0xC0 => int PROG_CHANGE;
-    0xD0 => int CHAN_PRESS;
-    0xE0 => int PITCHBEND;
-    0x7B => int ALLNOTESOFF;
-    0x00 => int CHANNEL;    // device MIDI channel
-    0xF8 => int CLOCK;
-    0xFA => int START;
-    0xFB => int CONTINUE;
-    0xFC => int STOP;
+    0x80 => static int NOTE_OFF;
+    0x90 => static int NOTE_ON;
+    0xA0 => static int POLY_PRESS;
+    0xB0 => static int CTRL_CHANGE;
+    0xC0 => static int PROG_CHANGE;
+    0xD0 => static int CHAN_PRESS;
+    0xE0 => static int PITCHBEND;
+    0x7B => static int ALLNOTESOFF;
+    0x00 => static int CHANNEL;    // device MIDI channel
+    0xF8 => static int CLOCK;
+    0xFA => static int START;
+    0xFB => static int CONTINUE;
+    0xFC => static int STOP;
 
-    function void print_midi_ports( MidiIn m_port )
+    function static void print_midi_ports( MidiIn m_port )
     {
         string midi_port_name[0];
         0 => int _c;
@@ -32,7 +32,7 @@ public class Midi_utils
         m_port.printerr(1);  // now we can re-enable printerr
     }
 
-    function void print_midi_ports( MidiOut m_port )
+    function static void print_midi_ports( MidiOut m_port )
     {
         string midi_port_name[0];
         0 => int _c;

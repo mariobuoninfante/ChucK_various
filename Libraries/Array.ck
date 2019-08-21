@@ -123,49 +123,40 @@ public class Array
 
     function void reverse( int a[] )
     {
-        a @=> int b[];
-        b.size() => int N;
+        a.size() => int N;
 
         for( 0 => int c; c < N/2; c++ )
         {
-            b[c] => int temp;
-            b[ N - 1 - c ] => b[c];
-            temp => b[ N - c - 1 ];
+            a[c] => int temp;
+            a[ N - 1 - c ] => a[c];
+            temp => a[ N - c - 1 ];
         }
-
-        b @=> a;
     }
 
 
     function void reverse( float a[] )
     {
-        a @=> float b[];
-        b.size() => int N;
+        a.size() => int N;
 
         for( 0 => int c; c < N/2; c++ )
         {
-            b[c] => float temp;
-            b[ N - 1 - c ] => b[c];
-            temp => b[ N - c - 1 ];
+            a[c] => float temp;
+            a[ N - 1 - c ] => a[c];
+            temp => a[ N - c - 1 ];
         }
-
-        b @=> a;
     }
 
 
     function void reverse( string a[] )
     {
-        a @=> string b[];
-        b.size() => int N;
+        a.size() => int N;
 
         for( 0 => int c; c < N/2; c++ )
         {
-            b[c] => string temp;
-            b[ N - 1 - c ] => b[c];
-            temp => b[ N - c - 1 ];
+            a[c] => string temp;
+            a[ N - 1 - c ] => a[c];
+            temp => a[ N - c - 1 ];
         }
-
-        b @=> a;
     }
 
 
