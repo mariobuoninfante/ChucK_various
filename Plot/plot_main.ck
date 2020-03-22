@@ -40,4 +40,4 @@ s2.freq(2);
 Plot.record(g, second);
 // add a bit more pause since record runs on a separate shred
 // otherwise the main shred dies before record() has returned
-1.1::second => now; 
+1.1::second => now;

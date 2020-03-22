@@ -1,19 +1,24 @@
-// In order to use this class install "gnuplot" - http://www.gnuplot.info/download.html
-// ChucK must be launched with "--caution-to-the-wind"
+// In order to use this class install "gnuplot" first - http://www.gnuplot.info/download.html
+// ChucK must be launched with "--caution-to-the-wind" - so watch out!
+// this has only been tested on Linux, should work on MacOS, no idea about Windows
+// ---
+// @author      Mario Buoninfante
+// @year        2020
 
 public class Plot
 {
     FileIO file;
 
-    float xrange[2];
+    float xrange[2];    // when xrange[0]==xrange[1] gnuplot uses default values - the same with yrange
     float yrange[2];
     "lines"     => string draw_type;
     "plot"      => string title;
-    0 => int export;    // whether or not to save the gnuplot script
     "__data.gnuplot" => string filename;
+    0 => int export;    // whether or not to save the gnuplot script
 
     function void plot(float a[])
     {
+        // plot array of floats
         file.open(filename, FileIO.WRITE);
 
         // this is needed to plot the graph without being in the interactive mode
@@ -38,6 +43,8 @@ public class Plot
 
     function void raw(string input)
     {
+        // talk directly to gnuplot
+        // 'input' is the command(s) passed to 'gnuplot -p -e' 
         string cmd;
         "gnuplot -p -e \"" => cmd;
         cmd + input + "\"" => cmd;
@@ -46,13 +53,15 @@ public class Plot
 
     function int record(UGen input, dur duration)
     {
+        // record a mono signal
         if(duration <= 0::samp)
             return 1;
-        spork ~ _record(input, duration);
+        spork ~ this._record(input, duration);
     }
 
     function void _record(UGen input, dur duration)
     {
+        // shred launched by record()
         float rec_buffer[(duration/samp) $ int]; 
         now => time t0;
         0 => int n;
