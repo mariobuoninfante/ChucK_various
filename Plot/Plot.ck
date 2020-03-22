@@ -9,10 +9,12 @@ public class Plot
     float yrange[2];
     "lines"     => string draw_type;
     "plot"      => string title;
+    0 => int export;    // whether or not to save the gnuplot script
+    "__data.gnuplot" => string filename;
 
     function void plot(float a[])
     {
-        file.open("data.txt", FileIO.WRITE);
+        file.open(filename, FileIO.WRITE);
 
         // this is needed to plot the graph without being in the interactive mode
         // check xrange and yrange
@@ -29,7 +31,16 @@ public class Plot
 
         file.close();
         // launch gnuplot and then delete the data file
-        Std.system("gnuplot -p \"data.txt\"");
-        Std.system("rm data.txt");
+        Std.system("gnuplot -p \"__data.gnuplot\"");
+        if(!export)
+            Std.system("rm __data.gnuplot");
+    }
+
+    function void raw(string input)
+    {
+        string cmd;
+        "gnuplot -p -e \"" => cmd;
+        cmd + input + "\"" => cmd;
+        Std.system(cmd);
     }
 }
