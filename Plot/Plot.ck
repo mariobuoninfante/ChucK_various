@@ -43,4 +43,25 @@ public class Plot
         cmd + input + "\"" => cmd;
         Std.system(cmd);
     }
+
+    function int record(UGen input, dur duration)
+    {
+        if(duration <= 0::samp)
+            return 1;
+        spork ~ _record(input, duration);
+    }
+
+    function void _record(UGen input, dur duration)
+    {
+        float rec_buffer[(duration/samp) $ int]; 
+        now => time t0;
+        0 => int n;
+        while((now-t0) < duration)
+        {
+            input.last() => rec_buffer[n++];
+            samp => now;
+        }
+
+        this.plot(rec_buffer);
+    }
 }
