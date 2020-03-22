@@ -55,8 +55,12 @@ public class Plot
     {
         // record a mono signal
         if(duration <= 0::samp)
+        {
+            chout <= "Error Plot.record() - Duration must be > 0 msec" <= IO.nl();
             return 1;
+        }
         spork ~ this._record(input, duration);
+        return 0;
     }
 
     function void _record(UGen input, dur duration)
