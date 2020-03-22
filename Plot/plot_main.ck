@@ -7,6 +7,7 @@ for(0 => int c; c < 512; c++)
 {
     Math.cos(2*Math.PI*(c/511.)) => array[c];
 }
+"cosine" => Plot.title;
 Plot.plot(array);
 
 // sawtooth waveform
@@ -16,6 +17,7 @@ for(0 => int c; c < 512; c++)
 }
 // change xrange
 [128., 383] @=> Plot.xrange;
+"sawtooth" => Plot.title;
 Plot.plot(array);
 
 // exponential waveform
@@ -29,4 +31,5 @@ for(0 => int c; c < 512; c++)
 [-0.5, 0.5] @=> Plot.yrange;
 // change draw type - check gnuplots types
 "points" => Plot.draw_type;
+"exp" => Plot.title;
 Plot.plot(array);
