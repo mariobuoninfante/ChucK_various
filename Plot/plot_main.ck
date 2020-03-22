@@ -14,6 +14,8 @@ for(0 => int c; c < 512; c++)
 {
     Math.fmod((c*2)/511., 1.) - 1 => array[c];
 }
+// change xrange
+[128., 383] @=> Plot.xrange;
 Plot.plot(array);
 
 // exponential waveform
@@ -22,4 +24,9 @@ for(0 => int c; c < 512; c++)
     Math.fmod((c*3)/511., 1.) => float x;
     x*x*x*x*x => array[c];
 }
+// change xrange and yrange
+[0., 511] @=> Plot.xrange;
+[-0.5, 0.5] @=> Plot.yrange;
+// change draw type - check gnuplots types
+"points" => Plot.draw_type;
 Plot.plot(array);
