@@ -16,11 +16,13 @@ public class Midi_utils
 
     function static void print_midi_ports( MidiIn m_port )
     {
+        MidiIn m_port;
         string midi_port_name[0];
         0 => int _c;
 
         m_port.printerr(0);  // don't print error when trying to open port that doesn't exist
         m_port.open(_c);
+        <<< "MIDI IN PORTS" >>>;
         while( m_port.name() != "" )
         {
             midi_port_name.size( midi_port_name.size() + 1 );
@@ -34,11 +36,13 @@ public class Midi_utils
 
     function static void print_midi_ports( MidiOut m_port )
     {
+        MidiOut m_port;
         string midi_port_name[0];
         0 => int _c;
 
         m_port.printerr(0);  // don't print error when trying to open port that doesn't exist
         m_port.open(_c);
+        <<< "MIDI OUT PORTS" >>>;
         while( m_port.name() != "" )
         {
             midi_port_name.size( midi_port_name.size() + 1 );
