@@ -1,6 +1,6 @@
 // In order to use this class install "gnuplot" first - http://www.gnuplot.info/download.html
 // ChucK must be launched with "--caution-to-the-wind" - so watch out!
-// this has only been tested on Linux, should work on MacOS, no idea about Windows
+// this has only been tested on Linux and MacOS High Sierra 10.13.1, no idea about Windows
 // ---
 // @author      Mario Buoninfante
 // @year        2020
