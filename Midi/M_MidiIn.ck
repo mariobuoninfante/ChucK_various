@@ -45,29 +45,13 @@ public class M_MidiIn extends MidiIn
 
     function void print_midi_ports()
     {
-        // better not to use this since ChucK (1.4.0.0) leaves all the MIDI ports open
-        // print list of available MIDI ports
-        string midi_port_name[0];
-        0 => int _c;
-
-        this.printerr(0);  // don't print error when trying to open port that doesn't exist
-        chout <= "\nMIDI IN PORTS\n---" <= IO.nl();
-        this.open(_c);
-        while( this.name() != "" )
-        {
-            midi_port_name.size( midi_port_name.size() + 1 );
-            this.name() => midi_port_name[_c];
-            chout <= _c <= " " <=  midi_port_name[_c] <= IO.nl();
-            _c++;
-            this.open(_c);
-        }
-        this.printerr(1);  // now we can re-enable printerr
-        chout <= "---" <= IO.nl();
+        // In order to use this method chuck --caution-to-the-wind is needed
+        Std.system("chuck PrintMidiInPorts");
     }
 
     function void connect_from_list()
     {
-        // better not to use this since ChucK (1.4.0.0) leaves all the MIDI ports open
+        // In order to use this method chuck --caution-to-the-wind is needed
         // print list of available MIDI ports and pick one from the console 
         ConsoleInput user_in;
         this.print_midi_ports();
