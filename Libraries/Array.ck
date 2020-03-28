@@ -121,7 +121,7 @@ public class Array
         return -1;
     }
 
-    function void reverse( int a[] )
+    function static void reverse( int a[] )
     {
         a.size() => int N;
 
@@ -134,7 +134,7 @@ public class Array
     }
 
 
-    function void reverse( float a[] )
+    function static void reverse( float a[] )
     {
         a.size() => int N;
 
@@ -147,7 +147,7 @@ public class Array
     }
 
 
-    function void reverse( string a[] )
+    function static void reverse( string a[] )
     {
         a.size() => int N;
 
@@ -187,3 +187,7 @@ public class Array
         chout <= IO.nl();
     }
 }
+
+// create an instance of the class to initialize the class members
+// see 'class constructors' here: https://chuck.cs.princeton.edu/doc/language/class.html#intro
+Array _Array;

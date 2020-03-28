@@ -132,45 +132,8 @@ public class Str
 
         return output;
     }
-
-    function static string type( string file_path, string s )
-    {
-        /*
-            This is ridiculously clunky and there's no reason why this is a method of the Str class.
-            Plus at the moment doesn't deal with any UGen - so there's no reason why it should be used!!!!!
-            ARGS:
-            1. it must always be "me.path()"
-            2. variable name as string
-            This method can only be used in a file that has been saved!!!!!
-        */
-
-        FileIO file;
-        file.open( file_path, FileIO.READ);
-
-        int oracle;
-        string mom;
-        ["int", "float", "dur", "complex", "time", "polar", "vec3", "vec4", "string", "Event"] @=> string data_type[];
-        while( !file.eof() )
-        {
-            file.readLine() => string line;
-            for( 0 => int c; c < data_type.size(); c++ )
-            {
-                s + "[" => mom;
-                line.find( mom ) => oracle;
-                if( oracle != -1 )
-                {
-                    file.close();
-                    return "array";
-                }
-                data_type[c] + " " + s => mom;
-                line.find( mom ) => oracle;
-                if( oracle != -1 )
-                {
-                    file.close();
-                    return data_type[c];
-                }
-            }
-        }
-        return "none";
-    }
 }
+
+// create an instance of the class to initialize the class members
+// see 'class constructors' here: https://chuck.cs.princeton.edu/doc/language/class.html#intro
+Str _Str;
