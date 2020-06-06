@@ -1,0 +1,2 @@
+Machine.add(me.dir() + "PulseGen.ck");
+Machine.add(me.dir() + "PulseGen-main.ck");
