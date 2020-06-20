@@ -35,7 +35,7 @@ MIDI library:
 
 
 ## Plot
-Generate plot using "gnuplot"
+Generate plots using "gnuplot"
 
 
 ## SysEx
