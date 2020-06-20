@@ -1,0 +1,15 @@
+# ChucK_various
+### set of scripts and utils for ChucK programming language
+---
+
+## Dsp
+
+- PulseGen - Pulse Generator UGen
+- DCRemover
+- Feedback_Delay
+
+
+
+## Emacs_automcomplete_dict
+ChucK dictio
+
