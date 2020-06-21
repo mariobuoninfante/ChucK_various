@@ -14,14 +14,23 @@ public class UCtrl
 {
     // interpolations happen on different shred
 
-    5 => int rate;  // samples
+    Shred gainInterp;
+    Shred panInterp;
+    3 => int rate;  // samples
     ms / samp => float sampInMsec;
     rate / sampInMsec => float coeff;
     
     // GAIN
     function void gain(UGen ugen, float target, float t)
     {
-	spork ~ _gain(ugen, target, t);
+	if (gainInterp.done() == 0)
+	{
+	    if (gainInterp.id() != 0)
+	    {
+		Machine.remove(gainInterp.id());
+	    }
+	}
+	spork ~ _gain(ugen, target, t) @=> gainInterp;
     }
     
     function void _gain(UGen ugen, float target, float t)
@@ -64,7 +73,14 @@ public class UCtrl
     // PAN
     function void pan(Pan2 ugen, float target, float t)
     {
-	spork ~ _pan(ugen, target, t);
+	if (panInterp.done() == 0)
+	{
+	    if (panInterp.id() != 0)
+	    {
+		Machine.remove(panInterp.id());
+	    }
+	}
+	spork ~ _pan(ugen, target, t) @=> panInterp;
     }
 
     function void _pan(Pan2 ugen, float target, float t)
