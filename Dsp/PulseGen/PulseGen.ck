@@ -28,11 +28,9 @@ public class PulseGen extends Chubgraph
 {
     // DSP
 
-    Phasor phasor => Gain pGain => Gain pOffset => Clip clip => SinOsc osc => DCRemover highpass => outlet;
+    Phasor phasor => Envelope line => Gain pOffset => Clip clip => SinOsc osc => DCRemover highpass => outlet;
     Step pStep => pOffset;
-    Line line => pGain;
 
-    pGain.op(3);
     pStep.next(-0.25);
     osc.sync(1);
     clip.range(-0.25, 0.75);
