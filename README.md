@@ -7,7 +7,7 @@
 - PulseGen - Pulse Generator UGen
 - DCRemover
 - Feedback_Delay
-
+- Phaser (4-6-8 stages)
 
 
 ## Emacs_automcomplete_dict
@@ -44,8 +44,8 @@ Send / receive sysex from Pure Data via open sound control
 
 ## Utils
 - Line - UGen line interpolator (Step => Envelope)
-- UCtrl - UGen gain and pan interpolator
+- UCtrl - UGen gain and pan interpolator (uses parallel shreds to interpolate)
 
 
 ## glitch
-offlie glitch generator 
+offline glitch generator 
