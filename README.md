@@ -8,7 +8,7 @@
 - DCRemover
 - Feedback_Delay
 - Phaser (4-6-8 stages)
-
+- DDelay - delay with filtered feedback chain
 
 ## Emacs_automcomplete_dict
 ChucK dictionary for emacs auto-complete - see README.txt in the folder
