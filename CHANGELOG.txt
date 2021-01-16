@@ -1,3 +1,7 @@
+2021-01-16
+---
+  - /Devices - added Novation Launchcontrol class and example
+
 2021-01-15
 ---
   - /Dsp - added DDelay.ck

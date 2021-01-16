@@ -2,8 +2,12 @@
 ### set of scripts and utils for ChucK programming language
 ---
 
-## Dsp
+## Devices
+- Novation Launchpad MKII
+- Novation Launchcontrol
 
+
+## Dsp
 - PulseGen - Pulse Generator UGen
 - DCRemover
 - Feedback_Delay
