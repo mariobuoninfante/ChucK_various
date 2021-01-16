@@ -1,5 +1,13 @@
 public class LaunchControl
 {
+
+    // Novation Launchcontrol class
+    // ----------------------------
+    //
+    // Mario Buoninfante - copyright 2021
+    // mario.buoninfante@gmail.com
+
+    
     //-----------------------------------
     // TO BE USED WITH FACTORY TEMPLATE 1 
     //-----------------------------------
@@ -91,7 +99,8 @@ public class LaunchControl
     function void set_button(int id, string color)
     {
 	// button_nr: 0-3 - from top-left to bottom-right
-
+	// buttons LEDs are RED only
+	
 	_flash_mode_on();
 	CTRL_CH_MIDI    => msg_out.data1;
 	(id & 3) + 114  => msg_out.data2;
