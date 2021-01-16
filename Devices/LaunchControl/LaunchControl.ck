@@ -99,7 +99,7 @@ public class LaunchControl
     function void set_button(int id, string color)
     {
 	// button_nr: 0-3 - from top-left to bottom-right
-	// buttons LEDs are RED only
+	// button LEDs are RED only
 	
 	_flash_mode_on();
 	CTRL_CH_MIDI    => msg_out.data1;
