@@ -1,9 +1,13 @@
+2021-06-17
+---
+  - ./LUFS - added (offline) LUFS analyzer
+
 2021-01-16
 ---
-  - /Devices - added Novation Launchcontrol class and example
+  - ./Devices - added Novation Launchcontrol class and example
 
 2021-01-15
 ---
-  - /Dsp - added DDelay.ck
+  - ./Dsp - added DDelay.ck
   - added CHANGELOG to the repo
-  - /Dsp - added Phaser Chugraph and /examples folder with related example
+  - ./Dsp - added Phaser Chugraph and /examples folder with related example
