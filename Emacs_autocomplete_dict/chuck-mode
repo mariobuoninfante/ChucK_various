@@ -88,6 +88,11 @@ TwoPole
 TwoZero
 Teabox
 LiSa
+LiSa2
+LiSa4
+LiSa6
+LiSa8
+LiSa16
 SndBuf
 SndBuf2
 WvIn
@@ -158,6 +163,7 @@ RMS
 RollOff
 Chugen
 Chubgraph
+Chugraph
 Math.sin
 Math.cos
 Math.tan
@@ -457,6 +463,7 @@ chunks
 pos
 interp
 samples
+frames
 phaseOffset
 path
 addPhase
@@ -470,6 +477,7 @@ closeFile
 addr
 port
 pan
+panType
 delay
 max
 keyOn
@@ -604,3 +612,7 @@ spectrum
 samples
 compute
 percent
+help
+HnkyTonk
+FrencHrn
+KrstlChr
