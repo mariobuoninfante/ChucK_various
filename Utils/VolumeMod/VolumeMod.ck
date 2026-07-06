@@ -45,7 +45,7 @@ public class VolumeMod extends Chugraph {
     }
 
     function void setMode (int m) {
-        // set mode to either "standard" (range: 0,1), or "inverse" (range: 1,0)
+        // set mode to either 0 (range: 0,1), or 1 (range: 1,0)
 
         if (m == 0) {
             rightOffset.next(0);
@@ -72,5 +72,12 @@ public class VolumeMod extends Chugraph {
                 offset =< g;
             }
         }
+    }
+
+    function void setModAmount (float x) {
+        // equivalent to "LFO depth"
+
+        // Math.max(0, Math.min(x, 1)) => x  // chosing to trust you!!!!!
+        g.gain(x);
     }
 }

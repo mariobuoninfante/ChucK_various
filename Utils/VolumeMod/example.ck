@@ -6,7 +6,7 @@
 
 
 VolumeMod panMod[2];
-SinOsc oscil; 
+TriOsc oscil; 
 Phasor lfo;
 
 oscil => panMod[0] => dac.left;
@@ -24,9 +24,10 @@ lfo.freq(lfoFreq);
 
 panMod[0].connectMod(lfo);
 panMod[1].connectMod(lfo);
-panMod[1].setMode(1);
+panMod[1].setMode(1);  // set mode to either 0 (range: 0,1), or 1 (range: 1,0)
 panMod[0].setRangeMode(1);
 panMod[1].setRangeMode(1);
+
 
 chout <= "\nFilter LFO example\n" <= IO.nl(); 
 
